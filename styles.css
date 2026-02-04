@@ -261,6 +261,43 @@ body {
   font-size: 0.9rem;
 }
 
+.support-card {
+  margin-top: 0.75rem;
+  padding: 0.7rem;
+  border-radius: 12px;
+  border: 1px solid rgba(116, 214, 154, 0.48);
+  background: linear-gradient(155deg, rgba(18, 53, 47, 0.82), rgba(10, 30, 35, 0.86));
+}
+
+.support-card h3 {
+  margin-bottom: 0.35rem;
+}
+
+.support-card p {
+  margin: 0;
+  color: #c3ece0;
+  font-size: 0.88rem;
+}
+
+.venmo-qr-wrap {
+  margin: 0.6rem 0 0;
+}
+
+.venmo-qr {
+  display: block;
+  width: min(220px, 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(143, 244, 194, 0.35);
+  background: #f6f8fb;
+}
+
+.venmo-qr-hint {
+  display: none;
+  margin-top: 0.35rem;
+  color: #9ec7bc;
+  font-size: 0.78rem;
+}
+
 .match-card {
   margin-top: 0.8rem;
   border-radius: 14px;
