@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milano Cortina 2026 Ice Hockey Classic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-left"></div>
+  <div class="ambient ambient-right"></div>
+
+  <header class="hero">
+    <p class="kicker">Olympic Winter Games - Milano Cortina 2026</p>
+    <h1>Ice Hockey Classic</h1>
+    <p class="subhead">Pick your nation, play your matches, and survive the full men's tournament format.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel" id="selectionPanel">
+      <div class="panel-head">
+        <h2>Select Your Team</h2>
+        <span class="chip" id="selectedTeamChip">No team selected</span>
+      </div>
+      <div class="mode-switch">
+        <button id="menModeBtn" class="mode-btn" type="button">Men's Ice Hockey</button>
+        <button id="womenModeBtn" class="mode-btn" type="button">Women's Ice Hockey</button>
+      </div>
+      <div id="teamGroups" class="team-groups"></div>
+      <div class="actions">
+        <button id="startBtn" class="btn btn-primary" disabled>Start Official Schedule</button>
+        <button id="resetBtn" class="btn btn-ghost">Reset Tournament</button>
+      </div>
+      <div class="rules-card">
+        <h3>Official Format</h3>
+        <div id="rulesBody">
+          <p>Select men's or women's first, then choose your team.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="centerPanel">
+      <div class="panel-head">
+        <h2>Current Match</h2>
+        <span class="chip" id="phaseChip">Waiting</span>
+      </div>
+
+      <article class="match-card" id="currentMatchCard">
+        <p class="match-stage">Start the tournament to load the schedule.</p>
+        <div class="matchup">
+          <span class="team">-</span>
+          <span class="vs">vs</span>
+          <span class="team">-</span>
+        </div>
+      </article>
+
+      <div class="actions">
+        <button id="playBtn" class="btn btn-primary" disabled>Play User Match</button>
+        <button id="simBtn" class="btn btn-secondary" disabled>Simulate Next Match</button>
+      </div>
+
+      <section class="log-wrap">
+        <h3>Match Feed</h3>
+        <ul id="eventLog" class="event-log"></ul>
+      </section>
+    </section>
+
+    <section class="panel" id="standingsPanel">
+      <div class="panel-head">
+        <h2>Standings & Bracket</h2>
+        <span class="chip" id="championChip">Medals: Gold TBD | Silver TBD | Bronze TBD</span>
+      </div>
+      <div id="standingsTables" class="standings"></div>
+      <section class="bracket-wrap">
+        <h3>Playoffs</h3>
+        <div id="bracketView" class="bracket-view">Bracket appears after group stage.</div>
+      </section>
+    </section>
+  </main>
+
+  <div id="gameModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-head">
+        <h2 id="gameTitle">Live Match</h2>
+        <span id="gameScore" class="score-chip">0 - 0</span>
+        <span class="chip" id="gameClock">75s</span>
+      </div>
+      <canvas id="rinkCanvas" width="960" height="540"></canvas>
+      <div class="game-hud">
+        <span class="controls-hint">Move: Arrow Keys or Mouse/Trackpad | Shoot: Space | Body Check: Shift</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
