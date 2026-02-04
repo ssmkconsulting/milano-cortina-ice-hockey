@@ -218,7 +218,9 @@ function clearTournamentProgress() {
   matchIdCounter = 1;
 
   dom.phaseChip.textContent = "Waiting";
-  dom.championChip.textContent = "Medals: Gold TBD | Silver TBD | Bronze TBD";
+  if (dom.championChip) {
+    dom.championChip.textContent = "Medals: Gold TBD | Silver TBD | Bronze TBD";
+  }
   dom.playBtn.disabled = true;
   dom.simBtn.disabled = true;
 }
@@ -228,7 +230,9 @@ function updateMedalChip() {
   const gold = medals.gold ? formatTeamName(medals.gold) : "TBD";
   const silver = medals.silver ? formatTeamName(medals.silver) : "TBD";
   const bronze = medals.bronze ? formatTeamName(medals.bronze) : "TBD";
-  dom.championChip.textContent = `Medals: Gold ${gold} | Silver ${silver} | Bronze ${bronze}`;
+  if (dom.championChip) {
+    dom.championChip.textContent = `Medals: Gold ${gold} | Silver ${silver} | Bronze ${bronze}`;
+  }
 }
 
 function selectTournament(key) {
